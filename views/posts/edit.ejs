@@ -1,0 +1,37 @@
+<form action="/admin/posts/<%= page._id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <header id="header">
+    <h1 id="header-title">Edit</h1>
+    <div id="header-buttons">
+      <a href="/admin/posts" id="edit-cancel-button" class="header-button button grey" title="Cancel">Cancel</a>
+      <a href="#" id="edit-delete-button" class="header-button button red" title="Delete">Delete</a>
+      <button type="submit" id="edit-save-button" class="header-button button green">Save</button>
+    </div>
+    <% if (message == 1){ %>
+      <div id="header-message">Saved</div>
+    <% } %>
+  </header>
+
+  <div id="post-edit">
+    <textarea name="content" id="post-textarea"><%- raw %></textarea>
+  </div>
+</form>
+
+<div class="modal" id="delete-post-modal">
+  <div class="back"></div>
+  <form action="/admin/posts/<%= page._id %>" method="post">
+    <div class="window">
+      <header>
+        <h3 class="title">Are you sure?</h3>
+      </header>
+      <div class="content">This action can't be undone. This post will be deleted permanently.</div>
+      <footer>
+        <a href="#" class="button grey close">Cancel</a>
+        <button type="submit" class="button red">Delete</button>
+      </footer>
+    </div>
+    <input type="hidden" value="delete" name="_method">
+  </form>
+</div>
+
+<script src="/admin/js/edit.js"></script>

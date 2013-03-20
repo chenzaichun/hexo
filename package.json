@@ -42,7 +42,8 @@
     "graceful-fs": "*",
     "optimist": "*",
     "watchr": "*",
-    "warehouse": "*"
+    "warehouse": "*",
+    "connect-flash": "*"
   },
   "devDependencies": {
     "mocha": "*",

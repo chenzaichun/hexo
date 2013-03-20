@@ -1,0 +1,45 @@
+<header id="header">
+  <h1 id="header-title">Posts</h1>
+  <div id="header-buttons">
+    <a href="#" id="new-post-button" class="header-button button" title="New">New</a>
+  </div>
+  <% if (message == 2){ %>
+    <div id="header-message">Deleted</div>
+  <% } %>
+</header>
+
+<div id="post-list">
+  <% page.each(function(item){ %>
+    <div class="post">
+      <div class="post-meta"><%= item.date.format(config.date_format) %></div>
+      <h1><a href="/admin/posts/<%= item._id %>/edit" class="post-title"><%= item.title %></a></h1>
+    </div>
+  <% }) %>
+</div>
+
+<div class="modal" id="new-post-modal">
+  <div class="back"></div>
+  <form action="/admin/posts" method="post" class="form" id="new-post-form">
+    <div class="window">
+      <header>
+        <h3 class="title">New Post</h3>
+      </header>
+      <div class="content">
+        <div class="group">
+          <label for="new-post-title">Title <span class="required-label">*</span></label>
+          <input type="text" id="new-post-title" name="title" class="required">
+        </div>
+        <div class="group">
+          <label for="new-post-slug">Slug</label>
+          <input type="text" id="new-post-slug" name="slug">
+        </div>
+      </div>
+      <footer>
+        <a href="#" class="button grey close">Cancel</a>
+        <button type="submit" class="button green">Create</button>
+      </footer>
+    </div>
+  </form>
+</div>
+
+<script src="/admin/js/list.js"></script>

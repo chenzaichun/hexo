@@ -1,0 +1,46 @@
+@import "nib"
+
+global-reset()
+
+font-default = "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+font-serif = Georgia, Times, serif
+font-mono = Monaco, Menlo, Consolas, Courier New, monospace
+
+font-icon = FontAwesome
+font-icon-path = 'font/fontawesome-webfont'
+
+@font-face {
+  font-family 'FontAwesome'
+  font-style normal
+  font-weight normal
+  src url(font-icon-path.eot?#iefix) format('embedded-opentype'), url(font-icon-path.woff) format('woff'), url(font-icon-path.ttf) format('truetype'), url(font-icon-path.svg#FontAwesomeRegular) format('svg')
+}
+
+color-font = #333
+color-meta = #999
+color-link = rgb(54, 140, 248)
+
+body
+  font 14px font-default
+  background url("images/handmadepaper.png")
+  color color-font
+
+input
+textarea
+  box-sizing border-box
+  outline none
+
+button
+  margin 0
+
+input::-moz-focus-inner
+button::-moz-focus-inner
+  padding 0
+  border 0
+
+#content
+  padding: 4% 6%
+
+@import "button"
+@import "form"
+@import "modal"

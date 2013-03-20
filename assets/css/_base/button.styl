@@ -1,0 +1,42 @@
+button-default = rgb(95, 147, 176)
+button-green = rgb(77, 175, 124)
+button-red = rgb(230, 93, 57)
+button-yellow = rgb(234, 200, 93)
+button-grey = #999
+
+.button
+  display block
+  color #fff
+  text-decoration none
+  padding 10px 15px
+  font inherit
+  line-height 1em
+  border-radius 3px
+  background button-default
+  border none
+  cursor pointer
+  text-align center
+  &:before
+    font-family font-icon
+    padding 0 10px 0 0
+  &:hover
+    background lighten(button-default, 20%)
+  &:active
+    background darken(button-default, 20%)
+  &.disabled
+    pointer-events none
+    background button-grey
+    color #ccc
+    &:hover
+      background button-grey
+  button-style(class, color)
+    &.{class}
+      background color
+      &:hover
+        background lighten(color, 20%)
+      &:active
+        background darken(color, 20%)
+  button-style('green', button-green)
+  button-style('grey', button-grey)
+  button-style('red', button-red)
+  button-style('yellow', button-yellow)
